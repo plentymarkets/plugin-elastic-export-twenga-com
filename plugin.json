@@ -1,0 +1,9 @@
+{
+  "name": "ElasticExportTwengaCOM",
+  "description": "This plugin adds the format TwengaCOM to the Elastic Export.",
+  "namespace": "ElasticExportTwengaCOM",
+  "author": "plentymarkets",
+  "type": "export",
+  "serviceProvider": "ElasticExportTwengaCOM\\ElasticExportTwengaCOMServiceProvider",
+  "version": 0.1
+}
