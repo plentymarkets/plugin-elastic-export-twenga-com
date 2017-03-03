@@ -8,8 +8,8 @@
   "price": 0.00,
   "description": "This plugin adds the format Twenga.com to the Elastic Export.",
   "shortDescription": {
-    "de": "Das Plugin ElasticExportSchuheDE fügt das Datenformat Twenga.com zum Elastischen Export hinzu.",
-    "en": "This plugin adds the format Twenga.com to the Elastic Export."
+    "de": "Das Plugin ElasticExportTwengaCOM fügt das Datenformat TwengaCOM-Plugin zum Elastischen Export hinzu.",
+    "en": "This plugin adds the format TwengaCom-Plugin to the Elastic Export."
   },
   "categories": [
     "3523"
