@@ -1,5 +1,5 @@
 
-# Elastic Export Twenga.com Plugin user guide
+# ElasticExportTwengaCOM plugin user guide
 
 <div class="container-toc"></div>
 
@@ -11,7 +11,7 @@ Twenga.com is an international shopping platform that offers comprehensive price
 
 To use this format, you need the Elastic Export plugin.
 
-Follow the instructions given on the [Exporting data](https://www.plentymarkets.co.uk/manual/data-exchange/exporting-data/#4) page of the manual to set up Twenga.com plugin in plentymarkets.
+Follow the instructions given on the [Exporting data](https://www.plentymarkets.co.uk/manual/data-exchange/exporting-data/#4) page of the manual to set up the format TwengaCOM-Plugin in plentymarkets.
 
 ## License
 
