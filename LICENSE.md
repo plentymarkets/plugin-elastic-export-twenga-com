@@ -1,4 +1,4 @@
-plentymarkets plugin Elastic Export Twenga.com
+plentymarkets plugin ElasticExportTwengaCOM
 
 Copyright © 2016 plentymarkets GmbH
 
