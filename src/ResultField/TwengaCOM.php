@@ -110,10 +110,24 @@ class TwengaCOM extends ResultFields
                 'variation.model',
 
                 //images
-                'images.item.type',
+                'images.all.urlMiddle',
+                'images.all.urlPreview',
+                'images.all.urlSecondPreview',
+                'images.all.url',
+                'images.all.path',
+                'images.all.position',
+
+                'images.item.urlMiddle',
+                'images.item.urlPreview',
+                'images.item.urlSecondPreview',
+                'images.item.url',
                 'images.item.path',
                 'images.item.position',
-                'images.variation.type',
+
+                'images.variation.urlMiddle',
+                'images.variation.urlPreview',
+                'images.variation.urlSecondPreview',
+                'images.variation.url',
                 'images.variation.path',
                 'images.variation.position',
 
@@ -124,18 +138,21 @@ class TwengaCOM extends ResultFields
                 'defaultCategories.id',
 
                 //barcodes
-                'barcodes.id',
                 'barcodes.code',
                 'barcodes.type',
-                'barcodes.name',
             ],
 
             [
-                $imageMutator,
                 $languageMutator,
                 $skuMutator,
             ],
         ];
+
+        // Get the associated images if reference is selected
+        if($reference != -1)
+        {
+            $fields[1][] = $imageMutator;
+        }
 
         foreach($itemDescriptionFields as $itemDescriptionField)
         {
