@@ -1,5 +1,10 @@
 # Release Notes für Elastic Export Twenga.com
 
+## v1.0.4 (2017-07-18)
+
+### Changed
+- The plugin Elastic Export is now required to use the plugin format.
+
 ## v1.0.3 (2017-05-24)
 
 ### Geändert
