@@ -2,8 +2,8 @@
 
 ## v1.0.4 (2017-07-18)
 
-### Changed
-- The plugin Elastic Export is now required to use the plugin format.
+### Geändert
+- Das Plugin Elastic Export ist nun Voraussetzung zur Nutzung des Plugin-Formats.
 
 ## v1.0.3 (2017-05-24)
 
