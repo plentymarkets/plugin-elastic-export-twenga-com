@@ -5,7 +5,10 @@ namespace ElasticExportTwengaCOM\ResultField;
 use Plenty\Modules\Cloud\ElasticSearch\Lib\Source\Mutator\BuiltIn\LanguageMutator;
 use Plenty\Modules\DataExchange\Contracts\ResultFields;
 use Plenty\Modules\Helper\Services\ArrayHelper;
+use Plenty\Modules\Item\Search\Mutators\BarcodeMutator;
+use Plenty\Modules\Item\Search\Mutators\DefaultCategoryMutator;
 use Plenty\Modules\Item\Search\Mutators\ImageMutator;
+use Plenty\Modules\Item\Search\Mutators\KeyMutator;
 use Plenty\Modules\Item\Search\Mutators\SkuMutator;
 
 
@@ -73,6 +76,8 @@ class TwengaCOM extends ResultFields
             $itemDescriptionFields[] = 'texts.technicalData';
         }
 
+        $itemDescriptionFields[] = 'texts.lang';
+
         // Mutators
         /**
          * @var ImageMutator $imageMutator
@@ -83,19 +88,40 @@ class TwengaCOM extends ResultFields
             $imageMutator->addMarket($reference);
         }
 
+		/**
+		 * @var BarcodeMutator $barcodeMutator
+		 */
+		$barcodeMutator = pluginApp(BarcodeMutator::class);
+		if($barcodeMutator instanceof BarcodeMutator)
+		{
+			$barcodeMutator->addMarket($reference);
+		}
+
+		/**
+		 * @var DefaultCategoryMutator $defaultCategoryMutator
+		 */
+		$defaultCategoryMutator = pluginApp(DefaultCategoryMutator::class);
+
+		if($defaultCategoryMutator instanceof DefaultCategoryMutator)
+		{
+			$defaultCategoryMutator->setPlentyId($settings->get('plentyId'));
+		}
+
+		/**
+		 * @var KeyMutator
+		 */
+		$keyMutator = pluginApp(KeyMutator::class);
+
+		if($keyMutator instanceof KeyMutator)
+		{
+			$keyMutator->setKeyList($this->getKeyList());
+			$keyMutator->setNestedKeyList($this->getNestedKeyList());
+		}
+
         /**
          * @var LanguageMutator $languageMutator
          */
         $languageMutator = pluginApp(LanguageMutator::class, [[$settings->get('lang')]]);
-
-        /**
-         * @var SkuMutator $skuMutator
-         */
-        $skuMutator = pluginApp(SkuMutator::class);
-        if($skuMutator instanceof SkuMutator)
-        {
-            $skuMutator->setMarket($reference);
-        }
 
         // Fields
         $fields = [
@@ -108,6 +134,7 @@ class TwengaCOM extends ResultFields
                 //variation
                 'id',
                 'variation.model',
+				'variation.number',
 
                 //images
                 'images.all.urlMiddle',
@@ -131,9 +158,6 @@ class TwengaCOM extends ResultFields
                 'images.variation.path',
                 'images.variation.position',
 
-                //sku
-                'skus.sku',
-
                 //defaultCategories
                 'defaultCategories.id',
 
@@ -144,7 +168,9 @@ class TwengaCOM extends ResultFields
 
             [
                 $languageMutator,
-                $skuMutator,
+				$barcodeMutator,
+				$defaultCategoryMutator,
+				$keyMutator
             ],
         ];
 
@@ -162,4 +188,95 @@ class TwengaCOM extends ResultFields
 
         return $fields;
     }
+
+	/**
+	 * @return array
+	 */
+	private function getKeyList()
+	{
+		return [
+			// Item
+			'item.id',
+			'item.manufacturer.id',
+			'item.conditionApi',
+
+			// Variation
+			'variation.model',
+			'variation.stockLimitation',
+			'variation.number',
+		];
+	}
+
+	/**
+	 * @return array
+	 */
+	private function getNestedKeyList()
+	{
+		return [
+			'keys' => [
+
+				// Barcodes
+				'barcodes',
+
+				// Default categories
+				'defaultCategories',
+
+				// Images
+				'images.all',
+				'images.item',
+				'images.variation',
+			],
+
+			'nestedKeys' => [
+
+				// Barcodes
+				'barcodes' => [
+					'code',
+					'type'
+				],
+
+				// Default categories
+				'defaultCategories' => [
+					'id'
+				],
+
+				// Images
+				'images.all' => [
+					'urlMiddle',
+					'urlPreview',
+					'urlSecondPreview',
+					'url',
+					'path',
+					'position',
+				],
+				'images.item' => [
+					'urlMiddle',
+					'urlPreview',
+					'urlSecondPreview',
+					'url',
+					'path',
+					'position',
+				],
+				'images.variation' => [
+					'urlMiddle',
+					'urlPreview',
+					'urlSecondPreview',
+					'url',
+					'path',
+					'position',
+				],
+
+				// texts
+				'texts' => [
+					'urlPath',
+					'name1',
+					'name2',
+					'name3',
+					'shortDescription',
+					'description',
+					'technicalData',
+				],
+			]
+		];
+	}
 }
