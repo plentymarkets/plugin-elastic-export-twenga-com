@@ -209,7 +209,7 @@ In der folgenden Tabelle finden Sie Hinweise zu den Einstellungen, Formateinstel
 			in_stock
 		</td>
 		<td>
-			<b>Inhalt:</b> Gibt an ob die Variante <b>Bestand</b> hat abhängig von <b>stock_detail</b>.
+			<b>Inhalt:</b> Gibt an, ob die Variante <b>Bestand</b> abhängig von <b>stock_detail</b> hat.
 		</td>        
 	</tr>
 	<tr>
@@ -241,7 +241,7 @@ In der folgenden Tabelle finden Sie Hinweise zu den Einstellungen, Formateinstel
 			isbn
 		</td>
 		<td>
-			<b>Inhalt:</b> Die <b>isbn</b> der Variante.
+			<b>Inhalt:</b> Die <b>ISBN</b> der Variante.
 		</td>        
 	</tr>
 	<tr>
