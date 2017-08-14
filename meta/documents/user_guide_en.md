@@ -70,7 +70,7 @@ The following table lists details for settings, format settings and recommended 
             Markets
         </td>
         <td>
-            Choose one or multiple order referrer. The chosen order referrer has to be active at the variation for the item to be exported.
+            Choose one or multiple order referrers. The chosen order referrer has to be active at the variation for the item to be exported.
         </td>        
     </tr>
     <tr>
@@ -91,7 +91,7 @@ The following table lists details for settings, format settings and recommended 
             Preview text
         </td>
         <td>
-            This option does not affect this format.
+            This option is not relevant for this format.
         </td>        
     </tr>
     <tr>
@@ -128,7 +128,7 @@ The following table lists details for settings, format settings and recommended 
 			product_url
 		</td>
 		<td>
-			<b>Content:</b> The <b>URL path</b> of the item depending on the chosen <b>client</b> in the format settings.
+			<b>Content:</b> The <b>URL path</b> of the item depending on the chosen <b>client</b> in the format. settings.
 		</td>        
 	</tr>
 	<tr>
@@ -176,7 +176,7 @@ The following table lists details for settings, format settings and recommended 
 			regular_price
 		</td>
 		<td>
-			<b>Content:</b> If the <b>RRP</b> is activated in the format setting and is higher than the <b>sales price</b>, the <b>sales price</b> will be exported.
+			<b>Content:</b> If the <b>RRP</b> is activated in the format setting and is higher than the <b>sales price</b>, the <b>RRP</b> will be exported.
 		</td>        
 	</tr>
 	<tr>
@@ -208,7 +208,7 @@ The following table lists details for settings, format settings and recommended 
 			in_stock
 		</td>
 		<td>
-			<b>Content:</b> Indicates if the variation has <b>stock</b> depending on <b>stock_detail</b>
+			<b>Content:</b> Indicates if the variation has <b>stock</b>, depending on <b>stock_detail</b>.
 		</td>        
 	</tr>
 	<tr>
@@ -224,7 +224,7 @@ The following table lists details for settings, format settings and recommended 
 			condition
 		</td>
 		<td>
-			<b>Content:</b> Indicateds the <b>condition</b> of the variation.
+			<b>Content:</b> Indicates the <b>condition</b> of the variation.
 		</td>        
 	</tr>
 	<tr>
@@ -240,7 +240,7 @@ The following table lists details for settings, format settings and recommended 
 			isbn
 		</td>
 		<td>
-			<b>Content:</b> The <b>isbn</b> of the variation.
+			<b>Content:</b> The <b>ISBN</b> of the variation.
 		</td>        
 	</tr>
 	<tr>
@@ -248,7 +248,7 @@ The following table lists details for settings, format settings and recommended 
 			brand
 		</td>
 		<td>
-			<b>Content:</b> The <b>name of the manufacturer</b> of the item. The <b>external name</b> within <b>Settings » Items » Manufacturer</b> will be preferred if existing.
+			<b>Content:</b> The <b>name of the manufacturer</b> of the item. The <b>external name</b> from the menu <b>Settings » Items » Manufacturer</b> will be preferred if existing.
 		</td>        
 	</tr>
 </table>
