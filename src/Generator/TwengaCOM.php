@@ -22,6 +22,8 @@ class TwengaCOM extends CSVPluginGenerator
 {
 	use Loggable;
 
+	const DELIMITER = ";";
+
     /**
      * @var ElasticExportCoreHelper
      */
@@ -67,7 +69,7 @@ class TwengaCOM extends CSVPluginGenerator
 
 		$settings = $this->arrayHelper->buildMapFromObjectList($formatSettings, 'key', 'value');
 
-		$this->setDelimiter(";");
+		$this->setDelimiter(self::DELIMITER);
 
 		$this->addCSVContent([
 
@@ -105,6 +107,13 @@ class TwengaCOM extends CSVPluginGenerator
 
 				$resultList = $elasticSearch->execute();
 
+				if(!is_null($resultList['error']))
+				{
+					$this->getLogger(__METHOD__)->error('ElasticExportTwengaCOM::logs.esError', [
+						'Error message ' => $resultList['error'],
+					]);
+				}
+
 				foreach($resultList['documents'] as $variation)
 				{
 					if($lines == $filter['limit'])
@@ -123,16 +132,16 @@ class TwengaCOM extends CSVPluginGenerator
 						try
 						{
 							$this->buildRow($variation, $settings);
+							$lines = $lines +1;
 						}
 						catch(\Throwable $throwable)
 						{
-							$this->getLogger(__METHOD__)->error('ElasticExportTwenga::logs.fillRowError', [
+							$this->getLogger(__METHOD__)->error('ElasticExportTwengaCOM::logs.fillRowError', [
 								'Error message ' => $throwable->getMessage(),
 								'Error line'    => $throwable->getLine(),
 								'VariationId'   => $variation['id']
 							]);
 						}
-						$lines = $lines +1;
 					}
 				}
 			}while ($elasticSearch->hasNext());

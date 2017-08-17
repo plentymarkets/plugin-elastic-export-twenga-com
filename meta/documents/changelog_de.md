@@ -1,6 +1,6 @@
 # Release Notes für Elastic Export Twenga.com
 
-## v1.0.5 (2017-08-08)
+## v1.0.5 (2017-08-17)
 
 ### Geändert
 - Das Format-Plugin basiert nun nur noch auf Elastic Search.
