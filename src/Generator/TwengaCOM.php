@@ -71,28 +71,7 @@ class TwengaCOM extends CSVPluginGenerator
 
 		$this->setDelimiter(self::DELIMITER);
 
-		$this->addCSVContent([
-
-			// Compulsory fields
-			'product_url',
-			'designation',
-			'price',
-			'category',
-			'image_url',
-			'description',
-			'regular_price',
-			'shipping_cost',
-
-			// Optional fields
-			'merchant_id',
-			'manufacturer_id',
-			'in_stock',
-			'stock_detail',
-			'condition',
-			'upc_ean',
-			'isbn',
-			'brand',
-		]);
+		$this->setHeader();
 
 		if($elasticSearch instanceof VariationElasticSearchScrollRepositoryContract)
 		{
@@ -147,6 +126,32 @@ class TwengaCOM extends CSVPluginGenerator
 			}while ($elasticSearch->hasNext());
 		}
     }
+
+    private function setHeader()
+	{
+		$this->addCSVContent([
+
+			// Compulsory fields
+			'product_url',
+			'designation',
+			'price',
+			'category',
+			'image_url',
+			'description',
+			'regular_price',
+			'shipping_cost',
+
+			// Optional fields
+			'merchant_id',
+			'manufacturer_id',
+			'in_stock',
+			'stock_detail',
+			'condition',
+			'upc_ean',
+			'isbn',
+			'brand',
+		]);
+	}
 
     private function buildRow($variation, $settings)
 	{
