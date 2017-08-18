@@ -32,7 +32,8 @@ class ElasticExportTwengaCOMServiceProvider extends DataExchangeServiceProvider
             'ElasticExportTwengaCOM\ResultField\TwengaCOM',
             'ElasticExportTwengaCOM\Generator\TwengaCOM',
             '',
-            true
+            true,
+			true
         );
     }
 }
