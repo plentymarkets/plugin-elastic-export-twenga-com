@@ -1,5 +1,10 @@
 # Release Notes für Elastic Export Twenga.com
 
+## v1.1.0 (2017-12-28)
+
+### Hinzugefügt
+- Das Plugin berücksichtigt die neuen Felder "Bestandspuffer", "Bestand für Varianten ohne Bestandsbeschränkung" und "Bestand für Varianten ohne Bestandsführung".
+
 ## v1.0.5 (2017-08-17)
 
 ### Geändert

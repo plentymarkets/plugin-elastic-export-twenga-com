@@ -68,7 +68,9 @@ class TwengaCOM extends CSVPluginGenerator
 		$this->elasticExportHelper = pluginApp(ElasticExportCoreHelper::class);
 
 		$settings = $this->arrayHelper->buildMapFromObjectList($formatSettings, 'key', 'value');
-
+		
+		$this->elasticExportStockHelper->setAdditionalStockInformation($settings);
+		
 		$this->setDelimiter(self::DELIMITER);
 
 		$this->setHeader();
