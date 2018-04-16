@@ -1,6 +1,11 @@
 # Release Notes für Elastic Export Twenga.com
 
-## v1.1.2 (2018-02-16)
+## v1.1.2 (2018-04-16)
+
+### Hinzugefügt
+- Der User Guide des Plugins wurde ergänzt.
+
+## v1.1.1 (2018-02-16)
 
 ### Geändert
 - Plugin-Kurzbeschreibung wurde angepasst.
