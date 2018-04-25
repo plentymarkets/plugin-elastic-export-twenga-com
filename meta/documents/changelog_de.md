@@ -1,5 +1,11 @@
 # Release Notes für Elastic Export Twenga.com
 
+## v1.1.3 (2018-04-25)
+
+### Geändert
+- Die Filtrierung der Varianten wird durch die Klasse FiltrationService vorgenommen.
+- Vorschaubilder aktualisiert.
+
 ## v1.1.2 (2018-04-16)
 
 ### Hinzugefügt

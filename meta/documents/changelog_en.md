@@ -1,5 +1,11 @@
 # Release Notes for Elastic Export Twenga.com
 
+## v1.1.3 (2018-04-25)
+
+### Changed
+- The class FiltrationService is responsible for the filtration of all variations.
+- Preview images updated.
+
 ## v1.1.2 (2018-04-16)
 
 ### Added
