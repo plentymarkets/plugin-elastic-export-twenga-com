@@ -5,6 +5,7 @@ namespace ElasticExportTwengaCOM\Generator;
 use ElasticExport\Helper\ElasticExportCoreHelper;
 use ElasticExport\Helper\ElasticExportPriceHelper;
 use ElasticExport\Helper\ElasticExportStockHelper;
+use ElasticExport\Services\FiltrationService;
 use Plenty\Modules\DataExchange\Contracts\CSVPluginGenerator;
 use Plenty\Modules\Helper\Models\KeyValue;
 use Plenty\Modules\Helper\Services\ArrayHelper;
@@ -45,6 +46,11 @@ class TwengaCOM extends CSVPluginGenerator
     private $arrayHelper;
 
     /**
+     * @var FiltrationService
+     */
+    private $filtrationService;
+
+    /**
      * TwengaCOM constructor.
      *
      * @param ArrayHelper $arrayHelper
@@ -68,6 +74,7 @@ class TwengaCOM extends CSVPluginGenerator
 		$this->elasticExportHelper = pluginApp(ElasticExportCoreHelper::class);
 
 		$settings = $this->arrayHelper->buildMapFromObjectList($formatSettings, 'key', 'value');
+		$this->filtrationService = pluginApp(FiltrationService::class, [$settings, $filter]);
 		
 		$this->elasticExportStockHelper->setAdditionalStockInformation($settings);
 		
@@ -105,7 +112,7 @@ class TwengaCOM extends CSVPluginGenerator
 
 					if(is_array($resultList['documents']) && count($resultList['documents']) > 0)
 					{
-						if($this->elasticExportStockHelper->isFilteredByStock($variation, $filter) === true)
+						if($this->filtrationService->filter($variation))
 						{
 							continue;
 						}
