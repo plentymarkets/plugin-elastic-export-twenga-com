@@ -2,6 +2,7 @@
 
 namespace ElasticExportTwengaCOM\ResultField;
 
+use Plenty\Modules\Cloud\ElasticSearch\Lib\ElasticSearch;
 use Plenty\Modules\Cloud\ElasticSearch\Lib\Source\Mutator\BuiltIn\LanguageMutator;
 use Plenty\Modules\DataExchange\Contracts\ResultFields;
 use Plenty\Modules\Helper\Services\ArrayHelper;
@@ -48,8 +49,10 @@ class TwengaCOM extends ResultFields
 
         $reference = $settings->get('referrerId') ? $settings->get('referrerId') : self::TWENGA_COM;
 
-        $this->setOrderByList(['variation.itemId', 'ASC']);
-
+		$this->setOrderByList([
+			'path' => 'variation.itemId',
+			'order' => ElasticSearch::SORTING_ORDER_ASC]);
+        
         $itemDescriptionFields = ['texts.urlPath'];
 
         $itemDescriptionFields[] = ($settings->get('nameId')) ? 'texts.name' . $settings->get('nameId') : 'texts.name1';
@@ -121,7 +124,7 @@ class TwengaCOM extends ResultFields
         /**
          * @var LanguageMutator $languageMutator
          */
-        $languageMutator = pluginApp(LanguageMutator::class, [[$settings->get('lang')]]);
+        $languageMutator = pluginApp(LanguageMutator::class, ['languages' => [$settings->get('lang')]]);
 
         // Fields
         $fields = [
