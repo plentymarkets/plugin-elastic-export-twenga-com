@@ -1,5 +1,10 @@
 # Release Notes für Elastic Export Twenga.com
 
+## v1.1.3 (2018-07-12)
+
+### Geändert
+- Ein fehlerhafter Link im User Guide wurde korrigiert.
+
 ## v1.1.2 (2018-04-16)
 
 ### Hinzugefügt
