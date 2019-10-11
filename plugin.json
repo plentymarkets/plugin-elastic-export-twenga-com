@@ -2,7 +2,7 @@
   "name": "ElasticExportTwengaCOM",
   "namespace": "ElasticExportTwengaCOM",
   "type": "export",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "license": "GNU AFFERO GENERAL PUBLIC LICENSE Version 3, 19 November 2007",
   "pluginIcon": "icon_plugin_md.png",
   "price": 0.00,
@@ -18,7 +18,7 @@
     "de":"Twenga",
     "en":"Twenga"
   },
-  "author": "plentymarkets GmbH",
+  "author": "plentysystems AG",
   "authorIcon": "icon_author_xs.png",
   "serviceProvider": "ElasticExportTwengaCOM\\ElasticExportTwengaCOMServiceProvider",
   "require": ["ElasticExport"]
