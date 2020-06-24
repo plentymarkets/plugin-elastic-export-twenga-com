@@ -1,5 +1,10 @@
 # Release Notes für Elastic Export Twenga.com
 
+## v1.1.8 (2020-06-25)
+
+### Geändert
+- Die Plugin-Beschreibung wurde in das plentymarkets Handbuch umgezogen.
+
 ## v1.1.7 (2019-10-11)
 
 ### Geändert
