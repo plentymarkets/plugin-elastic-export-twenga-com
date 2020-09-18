@@ -23,5 +23,5 @@
   "serviceProvider": "ElasticExportTwengaCOM\\ElasticExportTwengaCOMServiceProvider",
   "require": {
     "ElasticExport": ">= 1.6.5"
-  },
+  }
 }
