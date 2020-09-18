@@ -1,6 +1,6 @@
 # Release Notes für Elastic Export Twenga.com
 
-## v1.1.8 (2020-09-17)
+## v1.1.8 (2020-09-18)
 
 ### Geändert
 - Plugin-Informationen wurden aktualisiert.
