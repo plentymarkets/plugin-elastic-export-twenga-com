@@ -110,7 +110,7 @@ class TwengaCOM extends CSVPluginGenerator
 						break;
 					}
 
-					if(is_array($resultList['documents']) && count($resultList['documents']) > 0)
+					if(is_array($resultList['documents']) && count($resultList['documents'] ?? []) > 0)
 					{
 						if($this->filtrationService->filter($variation))
 						{
@@ -178,7 +178,7 @@ class TwengaCOM extends CSVPluginGenerator
 
 		$image = $image = $this->elasticExportHelper->getImageListInOrder($variation, $settings, 1, $this->elasticExportHelper::VARIATION_IMAGES);
 
-		if(count($image) > 0)
+		if(count($image ?? []) > 0)
 		{
 			$image = $image[0];
 		}

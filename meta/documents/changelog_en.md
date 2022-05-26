@@ -1,5 +1,10 @@
 # Release Notes for Elastic Export Twenga.com
 
+## v1.1.9 (2022-05-26)
+
+### Changed
+- UPDATE - Additional updates to ensure compatibility with PHP 8.
+
 ## v1.1.8 (2020-09-18)
 
 ### Changed
