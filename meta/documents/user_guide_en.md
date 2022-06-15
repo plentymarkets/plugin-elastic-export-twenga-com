@@ -9,6 +9,7 @@ Item data can now be exported to Twenga using a catalogue. You do not need to in
 This plugin uses the Elastic Export. Therefore, you also need the **Elastic export** plugin. However, note that no new features are planned for the Elastic Export and the export formats. As such, we recommend that you create catalogues for the item export.
  
 Both methods to set up Twenga in plentymarkets are described in the <a href="https://knowledge.plentymarkets.com/en-gb/manual/main/markets/twenga.html" target="_blank">plentymarkets manual</a>.
+</div>
 
 ## License
 
